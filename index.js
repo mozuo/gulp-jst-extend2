@@ -32,24 +32,16 @@ function compile(file, renameKeys) {
     const $ = require("jquery")
     if ($(document.body).find("img").length > 0) {
         $(document.body).find("img").each(function(i, item) {
-                var src = $(this).attr("src")
-                if (src.indexOf() > -1) {
-                    src = src.match(/^<%=(.*)%>*/)[1] + "?v=" + new Date().getTime()
-                } else {
-                    src = src + "?v=" + new Date().getTime()
-                }
-                $(this).attr("src", src)
-                console.log($(this).attr("src"))
-            })
-            // var src = $(document.body).find("img").eq(0).attr("src")
-            // $(document.body).find("img").eq(0).attr("src", src + "?v=" + new Date().getTime())
-            // console.log($(document.body).find("img").eq(0).attr("src"))
-
+            var src = $(this).attr("src")
+            if (src.indexOf() > -1) {
+                src = src.match(/^<%=(.*)%>*/)[1] + "?v=" + new Date().getTime()
+            } else {
+                src = src + "?v=" + new Date().getTime()
+            }
+            $(this).attr("src", src)
+        })
     }
     contents = String(document.body.innerHTML)
-
-    // console.log($("<img src='aaa.jpg'>").attr("src"))
-    //console.log(dom.window.document.querySelector("p"))
 
     return {
         name: name,
