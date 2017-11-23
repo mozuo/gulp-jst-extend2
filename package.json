@@ -34,7 +34,7 @@
         "gulp-util": "~2.2.14",
         "jquery": "^3.2.1",
         "jsdom": "11.4.0",
-        "lodash": "~2.4.1",
+        "lodash": "^3.0.1",
         "through": "~2.3.4",
         "jsdom-global": "3.0.2"
     },
