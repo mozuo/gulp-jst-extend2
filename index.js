@@ -39,7 +39,6 @@ function compile(file, renameKeys) {
                 src = src + "?v=" + new Date().getTime()
             }
             $(this).attr("src", src)
-            console.log($(this).attr("src"))
         })
     }
     contents = String(document.body.innerHTML.replace("&lt;", "<").replace("&gt;", ">"))
