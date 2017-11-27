@@ -41,7 +41,7 @@ function compile(file, renameKeys) {
             $(this).attr("src", src)
         })
     }
-    contents = String(document.body.innerHTML.replace("&lt;", "<").replace("&gt;", ">"))
+    contents = String(document.body.innerHTML.replace(/&lt;/g, "<").replace(/&gt;/g, ">"))
     return {
         name: name,
         fnSource: _.template(contents).source
