@@ -42,6 +42,12 @@ function compile(file, renameKeys) {
         })
     }
     contents = String(document.body.innerHTML.replace(/&lt;/g, "<").replace(/&gt;/g, ">"))
+    name = path.split("tpl/")[1].split('/').slice(1);
+    if(name.length>1){
+        name = name.join("/").split(".")[0]
+    }else{
+        name = name[0].split(".")[0]
+    }
     return {
         name: name,
         fnSource: _.template(contents).source
