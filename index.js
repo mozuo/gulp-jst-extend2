@@ -41,7 +41,7 @@ function compile(file, renameKeys) {
             $(this).attr("src", src)
         })
     }
-    contents = String(document.body.innerHTML.replace(/&lt;/g, "<").replace(/&gt;/g, ">"))
+    contents = String(document.body.innerHTML.replace(/&lt;/g, "<").replace(/&gt;/g, ">")).replace(/&amp;/g,"&")
     name = path.split("tpl/")[1].split('/').slice(1);
     if(name.length>1){
         name = name.join("/").split(".")[0]
